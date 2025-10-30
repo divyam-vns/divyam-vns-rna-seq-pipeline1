@@ -1,0 +1,39 @@
+name: rnaseq-env
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python and system tools
+  - python=3.10
+  - pip
+  - pandas
+  - numpy
+  - matplotlib
+
+  # Bioinformatics tools
+  - fastqc
+  - multiqc
+  - hisat2
+  - samtools
+  - subread     # for featureCounts
+  - stringtie
+  - gffread
+  - bioconductor-deseq2
+  - bioconductor-tximport
+
+  # Optional useful tools
+  - seqkit
+  - cutadapt
+  - bedtools
+  - sra-tools
+
+  # R and plotting support
+  - r-base
+  - r-ggplot2
+  - r-dplyr
+
+  # Pip-only packages (if needed)
+  - pip:
+      - matplotlib-venn
+      - seaborn
