@@ -1,0 +1,54 @@
+# ============================================================
+# RNA-seq Pipeline Configuration
+# ============================================================
+
+# ---------- Project Settings ----------
+project_name: "Human_RNAseq_Project"
+outdir: "results"
+threads: 8
+
+# ---------- Reference Genome ----------
+genome:
+  name: "GRCh38"
+  fasta: "config/genomes/GRCh38.fa"
+  gtf: "config/genomes/GRCh38.gtf"
+  hisat2_index: "config/genomes/HISAT2_index/GRCh38"
+
+# ---------- Input Samples ----------
+# CSV file listing sample names and FASTQ paths
+samples: "samples.csv"
+
+# ---------- Quality Control ----------
+fastqc:
+  enabled: true
+  output_dir: "results/01_fastqc"
+
+multiqc:
+  enabled: true
+  output_dir: "results/02_multiqc"
+
+# ---------- Alignment ----------
+hisat2:
+  enabled: true
+  output_dir: "results/03_alignment"
+  extra_params: "--dta"   # for downstream transcript assembly
+
+# ---------- Counting ----------
+featureCounts:
+  enabled: true
+  output_dir: "results/04_counts"
+  strandedness: "unstranded"  # options: unstranded, stranded, reverse
+
+# ---------- Differential Expression ----------
+deseq2:
+  enabled: true
+  output_dir: "results/05_deseq2"
+  design_formula: "~ condition"  # modify if you have more covariates
+
+# ---------- Optional Steps ----------
+stringtie:
+  enabled: false
+  output_dir: "results/06_stringtie"
+
+# ---------- Logging ----------
+log_dir: "results/logs"
