@@ -1,3 +1,7 @@
-sample,fastq_1,fastq_2,condition
-S1,data/S1_R1.fastq.gz,data/S1_R2.fastq.gz,control
-S2,data/S2_R1.fastq.gz,data/S2_R2.fastq.gz,treatment
+sample,condition,fastq_1,fastq_2
+CTRL_1,Control,data/CTRL_1_R1.fastq.gz,data/CTRL_1_R2.fastq.gz
+CTRL_2,Control,data/CTRL_2_R1.fastq.gz,data/CTRL_2_R2.fastq.gz
+CTRL_3,Control,data/CTRL_3_R1.fastq.gz,data/CTRL_3_R2.fastq.gz
+TREAT_1,Treated,data/TREAT_1_R1.fastq.gz,data/TREAT_1_R2.fastq.gz
+TREAT_2,Treated,data/TREAT_2_R1.fastq.gz,data/TREAT_2_R2.fastq.gz
+TREAT_3,Treated,data/TREAT_3_R1.fastq.gz,data/TREAT_3_R2.fastq.gz
